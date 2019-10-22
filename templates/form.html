@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Survey Sheet</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+    <div class="panel-body">
+
+            <label for="name">Name: </label>
+            <input name="name" type="text" placeholder="Name:" class="form-control">
+
+            <label for="ID number">ID number</label>
+            <input name="ID number" type="text" placeholder="ID Number" class="form-control">
+
+            <label for="rank">Rank</label>
+            <select name="rank" required>
+                <option value="">Select your Rank</option>
+                <option value="1">Freshman</option>
+                <option value="2">Sophomore</option>
+                <option value="3">Junior</option>
+                <option value="4">Senior</option>
+                <option value="5">Grad Student</option>
+                <option value="6">Other</option>
+            </select>
+            <br />
+            Which service do you want to know more about?<br />
+
+            <input name="service" type="radio" value="Cross-Border Settlements" checked /> Cross-Border Settlements <br />
+             <input name="service" type="radio" value="Taxation and Auditing"> Taxation and Auditing <br />
+             <input name="service" type="radio" value="Legal and Compliance Assistance"> Legal and Compliance Assistance <br />
+             <input name="service" type="radio" value="Visa and Immigration Consulting"> Visa and Immigration Consulting <br />
+             <input name="service" type="radio" value="Intellectual Property"> Intellectual Property <br />
+        </form>
+
+
+
+        <!-- TODO -->
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+    </form>
+
+   <script>
+
+        document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector('input').value) {
+                alert('You must provide your name!');
+                return false;
+            }
+            else if (!document.querySelector('select').value) {
+                alert('You must state your rank!');
+                return false;
+            }
+            return true;
+        };
+
+    </script>
+
+{% endblock %}

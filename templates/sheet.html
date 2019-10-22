@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr><th>Name</th><th>ID number</th><th>Rank</th><th>Info Requested</th><th>Request ID</th></tr>
+        </thead>
+    {% for s in entry_line %}
+        <tr><th>{{s[0]}}</th><th> {{s[1]}} </th><th> {{s[2]}} </th><th> {{s[3]}}</th><th> {{s[4]}}</th></tr>
+    {% endfor %}
+    </table>
+
+
+{% endblock %}
